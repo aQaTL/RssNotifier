@@ -1,4 +1,4 @@
-package RssNotifier;
+package RssNotifier.core;
 
 import RssNotifier.data.RssRepository;
 import RssNotifier.data.RssSource;
@@ -7,15 +7,20 @@ import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class RssChecker {
 	private RssRepository repository;
+
+	@Autowired
+	private Logger coreLogger;
 
 	public RssChecker(RssRepository repository) {
 		this.repository = repository;
