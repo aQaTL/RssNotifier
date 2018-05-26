@@ -1,0 +1,3 @@
+# RssNotifier
+
+TODO: Write readme
