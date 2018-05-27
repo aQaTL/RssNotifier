@@ -28,6 +28,9 @@ public class RssCheckRateController {
 			coreLogger.severe(e.getMessage());
 			return getRate(model);
 		}
+		if (newRate == 0) {
+			return getRate(model);
+		}
 
 		coreLogger.info(String.format("new rate %d", newRate));
 		rssCheckerScheduler.setRate(newRate);
